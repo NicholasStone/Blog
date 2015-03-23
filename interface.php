@@ -18,13 +18,13 @@ if ($visit == $user)
 else
 	$access = false;
 	// 连接数据库
-$link = mysqli_connect ( 'localhost', 'root', '123456', 'blog' );
-$result = mysqli_query ( $link, "SELECT title FROM $visit ORDER BY ID_ART DESC" );
-if (! $result) {
+$link = mysqli_connect ( 'localhost', 'root', '123456', 'Blog' );
+if (! $link) {
 	echo "数据库出错" . mysqli_error ( $link );
 	mysqli_close ( $link );
 	die ();
 }
+$result = mysqli_query ( $link, "SELECT title FROM $visit ORDER BY ID_ART DESC" );
 $row = mysqli_fetch_assoc ( $result );
 
 if (empty ( $row )) {

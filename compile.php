@@ -5,13 +5,13 @@ $title = $content = "";
 if(!empty($_GET['title']) && !empty(['content']))
 {
 	$title = $_GET['title'];
-	$content = $_GET['content'];
+	$content = nl2br($_GET['content']);
 	$username = $_SESSION['username'];
 }
 
 if(!empty($title) && !empty($content))
 {
-	$link = mysqli_connect('localhost', 'root', '123456', 'blog');
+	$link = mysqli_connect('localhost', 'root', '123456', 'Blog');
 	if( !$link ) die("数据库连接错误".mysqli_error($link));
 	
 	$query = "INSERT INTO $username(title, content) VALUES('$title','$content')";
@@ -25,8 +25,9 @@ if(!empty($title) && !empty($content))
 	{
 		$StoreNor = false;
 	}
+
+	//mysqli_close($link);
 }
-mysqli_close($link);
 ?>
 
 

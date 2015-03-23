@@ -15,7 +15,7 @@ require_once 'interface.php';
 	<div class="container">
 		<div class="col-md-3">
 			<h3><?php 
-				echo "欢迎回来，".$user."</br>";
+				echo "欢迎回来，".$user."<br/>";
 				if( !$access ) echo '你正在查看'.$visit.'的博客';
 				?>
 			</h3>

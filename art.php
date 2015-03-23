@@ -14,7 +14,7 @@ $title = $_GET['title'];
 if($user == $visit) $accoss = true;
 else $accoss = false;
 
-$link = mysqli_connect('localhost', 'root', '123456', 'blog');
+$link = mysqli_connect('localhost', 'root', '123456', 'Blog');
 mysqli_query($link,"SET $visit UTF8");
 $result = mysqli_query($link, "SELECT content FROM $visit WHERE title = '$title'");
 $row = mysqli_fetch_array($result);
@@ -51,9 +51,10 @@ else
     </div>
     <div class="col-md-9 jumbotron">
 		<h1 class="blog"><?php echo $title ?></h1>
-		<p class="blog"><?php echo $content;?></p>
-		<p class="blog"><?php if($accoss) echo "<a href='Recom.php?title=$title'>编辑<a>"; ?></p>
-	</div>
+		<p><?php echo $content;?></p>
+    </div>
+	<p class="blog"><?php if($accoss) echo "<a href='Recom.php?title=$title'>编辑<a>"; ?></p>
+	
 </div>
 </body>
 </html>

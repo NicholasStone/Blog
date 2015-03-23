@@ -19,12 +19,12 @@ session_start();
 $title = $_GET['title'];
 $user = $_SESSION['username'];
 
-$link = mysqli_connect('localhost', 'root', '123456', 'blog') or die("数据库连接错误");
+$link = mysqli_connect('localhost', 'root', '123456', 'Blog') or die("数据库连接错误");
 $result = mysqli_query($link,"SELECT * FROM $user WHERE title='$title'");
 $row = mysqli_fetch_assoc($result);
 
 if(!empty($row)){
-	$content = $row['content'];
+	$content = str_replace("<br />", "", $row['content']);
 	$ID_ART = $row['ID_ART'];
 }
 mysqli_close($link);

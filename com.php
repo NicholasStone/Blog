@@ -29,7 +29,7 @@ require_once 'compile.php';
 			<?php
 			if( $StoreNor ) 
 			{
-				echo '保存正常，你可以<a href= "art.php?visit=$user&title=$title">查看</a>，或<a href="com.php">再写一篇</a>';
+				echo '保存正常，你可以<a href= "art.php?visit='.$username.'&title='.$title.'">查看</a>，或<a href="com.php">再写一篇</a>';
 			}
 			else if ( !empty($title) ) echo "保存失败";
 			?>

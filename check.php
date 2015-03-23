@@ -34,5 +34,4 @@ if(!empty($name) && !empty($password))
 	mysqli_close($link);
 }
 
-
 ?>

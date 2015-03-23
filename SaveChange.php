@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
 	$content = $_GET['content'];
 	$ID_ART = $_GET['ID_ART'];
 }
-$link = mysqli_connect('localhost', 'root', '123456', 'blog') or die("数据库连接出错，保存失败！");
+$link = mysqli_connect('localhost', 'root', '123456', 'Blog') or die("数据库连接出错，保存失败！");
 $result = mysqli_query($link, "UPDATE $user 
 								SET content = '$content' , title = '$title'
 								WHERE ID_ART='$ID_ART'");
