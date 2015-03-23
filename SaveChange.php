@@ -7,7 +7,7 @@ session_start();
 $user = $_SESSION['username'];
 if($_SERVER["REQUEST_METHOD"] == "GET"){
 	$title = $_GET['title'];
-	$content = $_GET['content'];
+	$content = nl2br($_GET['content']);
 	$ID_ART = $_GET['ID_ART'];
 }
 $link = mysqli_connect('localhost', 'root', '123456', 'Blog') or die("数据库连接出错，保存失败！");
